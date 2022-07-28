@@ -1,0 +1,27 @@
+<h1>Datos del producto </h1>
+<p>
+  <a class="link" href="/agregar">Agregar productos</a>
+</p>
+
+{{#if hayProductos}}
+  <table class="tabla_productos" border="solid">
+    <tr>
+      <th>T&iacute;tulo</th>
+      <th>Precio</th>
+      <th>Thumbnail</th>
+    </tr>
+    {{#each productos}}
+      <tr>
+        <td>{{this.nombre}}</td>
+        <td>${{this.precio}}</td>
+        <td><img
+            src="{{this.foto}}"
+            alt="{{this.nombre}}"
+            style="height: auto; width: 100px;"
+          /></td>
+      </tr>
+    {{/each}}
+  </table>
+{{else}}
+  <div class="no_hay_productos">No hay productos.</div>
+{{/if}}
